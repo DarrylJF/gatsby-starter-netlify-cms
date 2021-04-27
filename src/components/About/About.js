@@ -1,24 +1,68 @@
 import React from 'react'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import {Container, Row, Col} from 'reactstrap'
 import styles from './About.module.scss'
-import Img from "gatsby-image";
+import {graphql, useStaticQuery} from 'gatsby'
+import Img from 'gatsby-image'
 
-const About = ({title, aboutImage}) => {
+
+// ...GatsbyImageSharpFluid
+const About = () => {
+	const data = useStaticQuery(graphql`
+	query About {
+	    about: markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
+	      frontmatter {
+	        about {
+	          title
+	          aboutImage {
+	            childImageSharp {
+	              fluid(maxWidth: 800) {
+	                ...GatsbyImageSharpFluid
+	              }
+	            }
+	          }
+	          paragraphs
+	          aboutPattern {
+                childImageSharp {
+                  fluid {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+	        }
+	      }
+	    }
+	  }
+	`)
+	console.log(data)
+	const {
+		about: {
+			frontmatter: {
+				about: {
+					title, aboutImage, paragraphs, aboutPattern
+				}
+			}
+		}
+	} = data
 
 	return (
-		<Container className={styles.sectionAbout}>
-			<Row>
-				<Col md={6}>
-					<Img fluid={aboutImage.childImageSharp.image}/>
-				</Col>
-				<Col md={6}>
-					<h2>{title}</h2>
-					<hr/>
-				</Col>
-			</Row>
-		</Container>
+		<>
+			<Container className={styles.sectionAbout}>
+				<Row>
+					<Col lg={6}>
+						<Img fluid={aboutImage.childImageSharp.fluid}/>
+					</Col>
+					<Col lg={6}>
+						<h2>{title}</h2>
+						<hr/>
+						{paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+					</Col>
+				</Row>
+			</Container>
+			<div className={styles.sectionPattern}>
+				<Img fluid={aboutPattern.childImageSharp.fluid}/>
+			</div>
+		</>
 	)
 }
+
 export default About

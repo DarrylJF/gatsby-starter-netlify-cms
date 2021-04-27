@@ -1,4 +1,5 @@
 import CMS from 'netlify-cms-app'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 // import AboutPagePreview from './preview-templates/AboutPagePreview'

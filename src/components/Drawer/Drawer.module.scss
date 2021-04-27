@@ -13,12 +13,13 @@
 	align-items: center;
 	ul {
 		text-transform: capitalize;
+		text-align: center;
+		color: #fff;
 		li {
 			padding: 3vh 0;
 			a {
 				cursor: pointer;
 				font-size: 1.5rem;
-				color: #fff;
 			}
 		}
 	}
@@ -30,5 +31,11 @@
 		border: none;
 		color: #fff;
 		font-size: 2.5rem;
+	}
+	.drawer-logo {
+		position: absolute;
+		bottom: 3.75rem;
+		width: 50px;
+		margin: 0 auto;
 	}
 }

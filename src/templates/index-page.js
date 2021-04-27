@@ -1,35 +1,23 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import {Link, graphql} from 'gatsby'
-import Img from 'gatsby-image'
+// import PropTypes from 'prop-types'
+// import {Link, graphql} from 'gatsby'
 import Jumbotron from "../components/Jumbotron/Jumbotron";
 import Layout from '../components/Layout/Layout'
 import About from '../components/About/About'
 
 export const IndexPageTemplate = ({
-	                                  image,
-	                                  title,
-	                                  aboutImage,
-	                                  // color,
-	                                  // heading,
+	                                  // title,
+	                                  // image,
 	                                  // subheading,
 	                                  // mainpitch,
 	                                  // description,
 	                                  // intro,
                                   }) => {
-	const imageStyle = {
-		position: 'absolute',
-		top: '1.875rem',
-		left: '2.8125rem',
-		height: '70px'
-	}
+
 	return (
 		<>
-			<div style={imageStyle}>
-
-			</div>
 			<Jumbotron/>
-			<About title={title} aboutImage={aboutImage}/>
+			<About />
 		</>
 		)
 }
@@ -47,22 +35,14 @@ export const IndexPageTemplate = ({
 // 	}),
 // }
 
-const IndexPage = ({data}) => {
-	const {frontmatter} = data.markdownRemark
-	console.log(frontmatter.about.image)
+const IndexPage = () => {
+	// const {frontmatter} = data.markdownRemark
+	// console.log(frontmatter)
+
 
 	return (
 		<Layout>
 			<IndexPageTemplate
-				// image={frontmatter.image}
-				title={frontmatter.about.title}
-				aboutImage={frontmatter.about.image}
-				// color={frontmatter.color}
-				// heading={frontmatter.heading}
-				// subheading={frontmatter.subheading}
-				// mainpitch={frontmatter.mainpitch}
-				// description={frontmatter.description}
-				// intro={frontmatter.intro}
 			/>
 		</Layout>
 	)
@@ -78,28 +58,18 @@ const IndexPage = ({data}) => {
 
 export default IndexPage
 
-export const pageQuery = graphql`
-	{
-    markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
-      frontmatter {
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        about {
-          title
-          image {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+// 	{
+//     markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
+//       frontmatter {
+//         image {
+//           childImageSharp {
+//             fluid(maxWidth: 70) {
+//               ...GatsbyImageSharpFluid
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
