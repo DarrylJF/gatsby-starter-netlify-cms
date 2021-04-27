@@ -1,5 +1,9 @@
 .App {
 	display: flex;
 	flex-direction: column;
-	height: 100vh
+	height: 100vh;
+	.page-content {
+		flex: 1 1;
+		overflow: auto;
+	}
 }

@@ -1,23 +1,38 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {Link, graphql} from 'gatsby'
-
+import Img from 'gatsby-image'
+import Jumbotron from "../components/Jumbotron/Jumbotron";
 import Layout from '../components/Layout/Layout'
-import Features from '../components/Features'
+import About from '../components/About/About'
 
 export const IndexPageTemplate = ({
-	                                  // image,
-	                                  // title,
+	                                  image,
+	                                  title,
+	                                  aboutImage,
 	                                  // color,
 	                                  // heading,
 	                                  // subheading,
 	                                  // mainpitch,
 	                                  // description,
 	                                  // intro,
-                                  }) => (
-	<h1>Index Page</h1>
+                                  }) => {
+	const imageStyle = {
+		position: 'absolute',
+		top: '1.875rem',
+		left: '2.8125rem',
+		height: '70px'
+	}
+	return (
+		<>
+			<div style={imageStyle}>
 
-)
+			</div>
+			<Jumbotron/>
+			<About title={title} aboutImage={aboutImage}/>
+		</>
+		)
+}
 
 // IndexPageTemplate.propTypes = {
 // 	image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -33,13 +48,15 @@ export const IndexPageTemplate = ({
 // }
 
 const IndexPage = ({data}) => {
-	// const {frontmatter} = data.markdownRemark
+	const {frontmatter} = data.markdownRemark
+	console.log(frontmatter.about.image)
 
 	return (
 		<Layout>
 			<IndexPageTemplate
 				// image={frontmatter.image}
-				// title={frontmatter.title}
+				title={frontmatter.about.title}
+				aboutImage={frontmatter.about.image}
 				// color={frontmatter.color}
 				// heading={frontmatter.heading}
 				// subheading={frontmatter.subheading}
@@ -61,41 +78,28 @@ const IndexPage = ({data}) => {
 
 export default IndexPage
 
-// export const pageQuery = graphql`
-//   query IndexPageTemplate {
-//     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-//       frontmatter {
-//         title
-//         color
-//         image {
-//           childImageSharp {
-//             fluid(maxWidth: 2048, quality: 100) {
-//               ...GatsbyImageSharpFluid
-//             }
-//           }
-//         }
-//         heading
-//         subheading
-//         mainpitch {
-//           title
-//           description
-//         }
-//         description
-//         intro {
-//           blurbs {
-//             image {
-//               childImageSharp {
-//                 fluid(maxWidth: 240, quality: 64) {
-//                   ...GatsbyImageSharpFluid
-//                 }
-//               }
-//             }
-//             text
-//           }
-//           heading
-//           description
-//         }
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+	{
+    markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
+      frontmatter {
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        about {
+          title
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
