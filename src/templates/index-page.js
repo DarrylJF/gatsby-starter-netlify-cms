@@ -1,23 +1,29 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 // import {Link, graphql} from 'gatsby'
-import Jumbotron from "../components/Jumbotron/Jumbotron";
-import Layout from '../components/Layout/Layout'
-import About from '../components/About/About'
+import Jumbotron from "../components/Jumbotron";
+import Layout from '../components/Layout'
+import About from '../components/About'
+import Treatments from "../components/Treatments";
+// import MapArea from "../components/MapArea";
 
-export const IndexPageTemplate = ({
+export const IndexPageTemplate = (
+	// {
 	                                  // title,
 	                                  // image,
 	                                  // subheading,
 	                                  // mainpitch,
 	                                  // description,
 	                                  // intro,
-                                  }) => {
+                                  // }
+                                  ) => {
 
 	return (
 		<>
 			<Jumbotron/>
 			<About />
+			<Treatments/>
+			{/*<MapArea onMarkerMove={() => console.log('marker has moved')}/>*/}
 		</>
 		)
 }

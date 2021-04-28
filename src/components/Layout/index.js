@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../Navbar/Navbar'
+import Navbar from '../Navbar'
 import '../all.sass'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {graphql, useStaticQuery} from "gatsby";
@@ -10,7 +10,7 @@ import Img from "gatsby-image";
 const TemplateWrapper = ({children}) => {
 	const data = useStaticQuery(graphql`
 	query LogoImage	{
-        logo: markdownRemark(frontmatter: {templateKey: {eq: "index-page"}, about: {aboutImage: {}}}) {
+        logo: markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
           frontmatter {
             image {
               childImageSharp {

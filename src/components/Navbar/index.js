@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import MenuIcon from '@material-ui/icons/Menu';
 import Links from '../../constants/links'
 import styles from './Navbar.module.scss'
-import Drawer from "../Drawer/Drawer";
+import Drawer from "../Drawer";
 
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false)
