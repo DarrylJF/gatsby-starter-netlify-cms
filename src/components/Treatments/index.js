@@ -1,39 +1,42 @@
 import React from 'react'
-import Treatment from '../Treatment/Treatment'
+import Treatment from '../Treatment'
 import {graphql, useStaticQuery} from "gatsby";
 import {Container, Row, Col} from 'reactstrap'
+import styles from './Treatments.module.scss'
 
 const Treatments = () => {
 	const data = useStaticQuery(graphql`
 		{
         treatments: markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
           frontmatter {
-              treatments {
+            treatments {
+              title
+              items {
                 title
-                items {
-                  title
-                  price
-                  time
-                }
+                time
+                price
               }
+              subtitle
+              extra
+            }
           }
         }
       }
 	`)
 	const {treatments: {frontmatter: {treatments}}} = data
-
+	console.log(data)
 	return (
-		<div>
+		<div className={styles.sectionTreatments}>
 			<Container>
 				<Row>
 					<Col md={12}>
-						<h2></h2>
+						<h2>Treatments</h2>
 						<hr/>
-						<div>
+						<Row>
 							{treatments.map(treatment => (
-								<Treatment key={treatment.title} items={treatment.items} title={treatment.title}/>
+								<Treatment key={treatment.title} items={treatment.items} title={treatment.title} extra={treatment.extra} subtitle={treatment.subtitle}/>
 							))}
-						</div>
+						</Row>
 					</Col>
 				</Row>
 			</Container>
