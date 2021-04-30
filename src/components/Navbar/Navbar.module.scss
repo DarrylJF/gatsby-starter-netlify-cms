@@ -3,42 +3,51 @@
 	width: 100%;
 	background: transparent;
 	padding: 1.875rem 3.75rem;
+
 	div {
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;
 		font-size: 2.5rem;
 	}
+
 	svg {
 		font-size: 3rem;
-		color: #fff
+		color: #fff;
+		cursor: pointer;
 	}
-}
 
-.nav {
-	display: flex;
-	flex-wrap: wrap;
-	padding-left: 0;
-	margin-bottom: 0;
-	list-style: none;
-	font-size: 1.125rem;
-	text-transform: capitalize;
-	li {
-		padding: 20px;
-		a {
-			display: block;
-			padding: .5rem 1rem;
-			color: #254e39;
-			font-family: ratiomodern,serif;
-			font-size: 1.125rem;
+	.nav {
+		display: flex;
+		flex-wrap: wrap;
+		padding-left: 0;
+		margin-bottom: 0;
+		list-style: none;
+		font-size: 1.125rem;
+		text-transform: capitalize;
+
+		li {
+			padding: 20px;
+
+			a {
+				display: block;
+				padding: .5rem 1rem;
+				color: #254e39;
+				font-family: ratiomodern, serif;
+				font-size: 1.125rem;
+			}
 		}
 	}
 }
 
+
 @media screen and (max-width: 992px) {
-	.nav {
-		display: none;
+	.navbar {
+		.nav {
+			display: none;
+		}
 	}
+
 }
 
 @media screen and (min-width: 992px) {

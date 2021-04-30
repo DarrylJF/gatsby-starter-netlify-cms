@@ -6,26 +6,34 @@ import Layout from '../components/Layout'
 import About from '../components/About'
 import Treatments from "../components/Treatments";
 // import MapArea from "../components/MapArea";
+import FacialTreatments from "../components/FacialTreatments";
+import OpeningTimes from "../components/OpeningTimes";
+import Location from '../components/Location'
+import Contact from '../components/Contact'
 
 export const IndexPageTemplate = (
 	// {
-	                                  // title,
-	                                  // image,
-	                                  // subheading,
-	                                  // mainpitch,
-	                                  // description,
-	                                  // intro,
-                                  // }
-                                  ) => {
-
+	title,
+	// image,
+	// subheading,
+	// mainpitch,
+	// description,
+	// intro,
+	// }
+) => {
+	console.log(title.title)
 	return (
 		<>
-			<Jumbotron/>
-			<About />
+			<Jumbotron title={title.title}/>
+			<About/>
 			<Treatments/>
 			{/*<MapArea onMarkerMove={() => console.log('marker has moved')}/>*/}
+			<FacialTreatments/>
+			<OpeningTimes/>
+			<Location/>
+			<Contact/>
 		</>
-		)
+	)
 }
 
 // IndexPageTemplate.propTypes = {
@@ -41,14 +49,15 @@ export const IndexPageTemplate = (
 // 	}),
 // }
 
-const IndexPage = () => {
-	// const {frontmatter} = data.markdownRemark
-	// console.log(frontmatter)
+const IndexPage = ({data}) => {
+	const {frontmatter} = data.markdownRemark
+	console.log(frontmatter)
 
 
 	return (
 		<Layout>
 			<IndexPageTemplate
+				title={frontmatter.title}
 			/>
 		</Layout>
 	)
@@ -64,18 +73,12 @@ const IndexPage = () => {
 
 export default IndexPage
 
-// export const pageQuery = graphql`
-// 	{
-//     markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
-//       frontmatter {
-//         image {
-//           childImageSharp {
-//             fluid(maxWidth: 70) {
-//               ...GatsbyImageSharpFluid
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+	{
+    markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
+      frontmatter {
+        title
+      }
+    }
+  }
+`

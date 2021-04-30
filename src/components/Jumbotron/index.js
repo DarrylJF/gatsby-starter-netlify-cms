@@ -1,12 +1,13 @@
 import React from 'react'
 import styles from './Jumbotron.module.scss'
 
-const Jumbotron = () => {
+const Jumbotron = ({title}) => {
 	return (
 		<div className={styles.jumbotron}>
 			<h1>
-				Blackthorn Beauty
-				<span>& Piercings</span>
+				{title}
+				{/*Blackthorn Beauty*/}
+				{/*<span>& Piercings</span>*/}
 			</h1>
 		</div>
 	)

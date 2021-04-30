@@ -12,14 +12,6 @@ module.exports = {
 		'gatsby-transformer-sharp',
 		'gatsby-remark-images',
 		{
-			// keep as first gatsby-source-filesystem plugin for gatsby image support
-			resolve: 'gatsby-source-filesystem',
-			options: {
-				path: `${__dirname}/src/img`,
-				name: 'uploads',
-			},
-		},
-		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
 				path: `${__dirname}/src/pages`,

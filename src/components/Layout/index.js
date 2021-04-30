@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../Navbar'
+import Footer from '../Footer'
 import '../all.sass'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {graphql, useStaticQuery} from "gatsby";
@@ -31,7 +32,10 @@ const TemplateWrapper = ({children}) => {
 				<Img fluid={image}/>
 			</a>
 			<Navbar/>
-			<div className={styles.pageContent}>{children}</div>
+			<div className={styles.pageContent}>
+				{children}
+				<Footer/>
+			</div>
 		</div>
 	)
 }

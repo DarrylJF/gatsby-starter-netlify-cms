@@ -11,18 +11,25 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
 	ul {
 		text-transform: capitalize;
 		text-align: center;
 		color: #fff;
+
 		li {
 			padding: 3vh 0;
+
 			a {
 				cursor: pointer;
 				font-size: 1.5rem;
 			}
+			&:hover{
+				color: darken(#fff, 15%);
+			}
 		}
 	}
+
 	svg {
 		position: absolute;
 		top: 1.875rem;
@@ -31,7 +38,9 @@
 		border: none;
 		color: #fff;
 		font-size: 2.5rem;
+		cursor: pointer;
 	}
+
 	.drawer-logo {
 		position: absolute;
 		bottom: 3.75rem;

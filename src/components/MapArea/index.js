@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import ReactMapGL, {
 	FullscreenControl,
 	GeolocateControl,
@@ -40,7 +40,7 @@ const scaleControlStyle = {
 };
 
 
-const MapArea = ({ onMarkerMove }) => {
+const MapArea = ({onMarkerMove}) => {
 	const location = {
 		latitude: 52.0541523,
 		longitude: 1.1529685
@@ -94,10 +94,10 @@ const MapArea = ({ onMarkerMove }) => {
 					margin: 10
 				}}
 			>
-				<GeolocateControl style={geoLocateStyle} />
-				<FullscreenControl style={fullscreenControlStyle} />
-				<NavigationControl style={navStyle} />
-				<ScaleControl style={scaleControlStyle} />
+				<GeolocateControl style={geoLocateStyle}/>
+				<FullscreenControl style={fullscreenControlStyle}/>
+				<NavigationControl style={navStyle}/>
+				<ScaleControl style={scaleControlStyle}/>
 			</div>
 			{!!location?.latitude && !!location?.longitude && (
 				<Marker

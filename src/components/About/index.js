@@ -59,7 +59,7 @@ const About = () => {
 				</Row>
 			</Container>
 			<div className={styles.sectionPattern}>
-				<Img fluid={aboutPattern.childImageSharp.fluid}/>
+				<Img fluid={aboutPattern.childImageSharp.fluid} imgStyle={{objectFit: 'cover'}} style={{height: '150px'}}/>
 			</div>
 		</>
 	)

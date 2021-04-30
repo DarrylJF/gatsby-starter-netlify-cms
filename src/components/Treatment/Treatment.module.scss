@@ -6,6 +6,10 @@
 	background: #fff;
 	margin-bottom: 40px;
 
+	.gatsby-image-wrapper {
+		height: 283px!important;
+	}
+
 	.treatment-subtitle {
 		font-size: 14px;
 		margin-bottom: 30px;
@@ -28,6 +32,7 @@
 
 		h3 {
 			padding-bottom: 30px;
+			text-align: center;
 		}
 
 		ul {
@@ -56,6 +61,7 @@
 					}
 
 				}
+
 				span {
 					font-style: italic;
 					font-weight: 200;
@@ -74,3 +80,22 @@
 		}
 	}
 }
+
+//@media screen and (max-width: 668px) {
+//	.treatment {
+//		.treatment-inner {
+//			margin-top: 0;
+//			height: fit-content;
+//			overflow: auto;
+//			ul {
+//				overflow: auto;
+//				max-height: fit-content;
+//			}
+//			&:hover {
+//				margin-top: 0;
+//				height:fit-content;
+//			}
+//		}
+//	}
+//}
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 
 import MenuIcon from '@material-ui/icons/Menu';
 import Links from '../../constants/links'

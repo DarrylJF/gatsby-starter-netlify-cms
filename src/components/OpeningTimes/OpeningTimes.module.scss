@@ -1,0 +1,29 @@
+.section-opening {
+	text-align: center;
+	background: #efecec;
+	padding-top: 20px;
+	padding-bottom: 80px;
+	margin: 100px auto;
+
+	h2 {
+		font-size: 40px;
+		padding: 80px 0 20px;
+		text-align: center;
+	}
+
+	span {
+		font-size: 20px;
+		color: #707070;
+		text-transform: capitalize;
+
+		&::after {
+			content: " "
+		}
+	}
+
+	p {
+		font-size: 20px;
+		color: #707070;
+		text-transform: capitalize;
+	}
+}

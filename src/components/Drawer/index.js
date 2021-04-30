@@ -26,7 +26,7 @@ const Drawer = ({close}) => {
 	return (
 		<div className={styles.navMobile}>
 			<CloseIcon onClick={close}/>
-			<Links />
+			<Links/>
 			<div className={styles.drawerLogo}>
 				<Img fluid={image.childImageSharp.fluid}/>
 			</div>
