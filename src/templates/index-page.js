@@ -1,40 +1,39 @@
-import React from 'react'
+import React from "react";
 // import PropTypes from 'prop-types'
 // import {Link, graphql} from 'gatsby'
 import Jumbotron from "../components/Jumbotron";
-import Layout from '../components/Layout'
-import About from '../components/About'
+import Layout from "../components/Layout";
+import About from "../components/About";
 import Treatments from "../components/Treatments";
 // import MapArea from "../components/MapArea";
 import FacialTreatments from "../components/FacialTreatments";
 import OpeningTimes from "../components/OpeningTimes";
-import Location from '../components/Location'
-import Contact from '../components/Contact'
+import Location from "../components/Location";
+import Contact from "../components/Contact";
 
 export const IndexPageTemplate = (
-	// {
-	title,
-	// image,
-	// subheading,
-	// mainpitch,
-	// description,
-	// intro,
-	// }
+    // {
+    title
+    // image,
+    // subheading,
+    // mainpitch,
+    // description,
+    // intro,
+    // }
 ) => {
-	console.log(title.title)
-	return (
-		<>
-			<Jumbotron title={title.title}/>
-			<About/>
-			<Treatments/>
-			{/*<MapArea onMarkerMove={() => console.log('marker has moved')}/>*/}
-			<FacialTreatments/>
-			<OpeningTimes/>
-			<Location/>
-			<Contact/>
-		</>
-	)
-}
+    return (
+        <>
+            <Jumbotron title={title.title} />
+            <About />
+            <Treatments />
+            {/*<MapArea onMarkerMove={() => console.log('marker has moved')}/>*/}
+            <FacialTreatments />
+            <OpeningTimes />
+            <Location />
+            <Contact />
+        </>
+    );
+};
 
 // IndexPageTemplate.propTypes = {
 // 	image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -49,19 +48,15 @@ export const IndexPageTemplate = (
 // 	}),
 // }
 
-const IndexPage = ({data}) => {
-	const {frontmatter} = data.markdownRemark
-	console.log(frontmatter)
+const IndexPage = ({ data }) => {
+    const { frontmatter } = data.markdownRemark;
 
-
-	return (
-		<Layout>
-			<IndexPageTemplate
-				title={frontmatter.title}
-			/>
-		</Layout>
-	)
-}
+    return (
+        <Layout>
+            <IndexPageTemplate title={frontmatter.title} />
+        </Layout>
+    );
+};
 
 // IndexPage.propTypes = {
 // 	data: PropTypes.shape({
@@ -71,14 +66,14 @@ const IndexPage = ({data}) => {
 // 	}),
 // }
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
-	{
-    markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
-      frontmatter {
-        title
-      }
+    {
+        markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+            frontmatter {
+                title
+            }
+        }
     }
-  }
-`
+`;
