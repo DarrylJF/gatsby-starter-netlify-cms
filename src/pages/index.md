@@ -1,13 +1,17 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience2
+title: does this title change
 image: ../img/logo.png
 about:
   title: about
   aboutImage: ../img/about.png
   paragraphs:
-    - Saskia Brett is a fully qualified beauty therapist and licensed body piercer located upstairs at Freedom Tattoo Studio in Ipswich, Suffolk.
-    - Saskia has previously worked in spas before choosing to open Blackthorn Beauty. The newly refurbished studio provides a relaxing environment where Saskia provides a range of treatments such as eyelash extensions, massage and piercings.
+    - Saskia Brett is a fully qualified beauty therapist and licensed body
+      piercer located upstairs at Freedom Tattoo Studio in Ipswich, Suffolk.
+    - Saskia has previously worked in spas before choosing to open Blackthorn
+      Beauty. The newly refurbished studio provides a relaxing environment where
+      Saskia provides a range of treatments such as eyelash extensions, massage
+      and piercings.
     - Get in touch for further information or to book an appointment!
   aboutPattern: ../img/pattern.png
 treatments:
@@ -81,7 +85,8 @@ treatments:
         price: "15"
         time: time may vary
   - title: facials
-    subtitle: All facials include a consulation and skin analysis where the most suitable treatment can be discussed
+    subtitle: All facials include a consulation and skin analysis where the most
+      suitable treatment can be discussed
     extra: Machine used will be decided upon consultation and skin analysis
     items:
       - title: express tropic facial
@@ -100,7 +105,7 @@ treatments:
     extra: For any other piercings, please enquire with piercer for prices.
     items:
       - title: ear lobe
-        price: "single £15 | pair £20"
+        price: single £15 | pair £20
       - title: helix
         price: "20"
       - title: tragus
@@ -112,7 +117,7 @@ treatments:
       - title: scaffolding
         price: "25"
       - title: nostril
-        price: "single £20 | pair £30"
+        price: single £20 | pair £30
       - title: septum
         price: "25"
       - title: lip
@@ -124,7 +129,7 @@ treatments:
       - title: navel
         price: "25"
       - title: nipple
-        price: "single £30 | pair £50"
+        price: single £30 | pair £50
       - title: jewellery change
         price: "10"
 ---
