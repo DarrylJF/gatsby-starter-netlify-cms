@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import {graphql, useStaticQuery} from "gatsby";
 
 import styles from "./Layout.module.scss";
-import Img from "gatsby-image";
+// import Img from "gatsby-image";
 
 const TemplateWrapper = ({ children }) => {
     // 	const data = useStaticQuery(graphql`
