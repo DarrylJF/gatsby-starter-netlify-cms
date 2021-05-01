@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: does this title change
-image: ../img/logo.png
+logo: ../img/logo.png
 footer: ../img/footer.png
 about:
   title: about

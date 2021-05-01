@@ -49,11 +49,11 @@ export const IndexPageTemplate = (
 // }
 
 const IndexPage = ({ data }) => {
-    const { frontmatter } = data.markdownRemark;
+    const { frontmatter: {title} } = data.markdownRemark;
 
     return (
         <Layout>
-            <IndexPageTemplate title={frontmatter.title} />
+            <IndexPageTemplate title={title} />
         </Layout>
     );
 };

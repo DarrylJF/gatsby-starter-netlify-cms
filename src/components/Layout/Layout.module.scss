@@ -9,9 +9,10 @@
 
 	.logo {
 		position: absolute;
-		top: 1.875rem;
-		left: 2.8125rem;
-		height: 70px;
+		top: .875rem;
+		left: 1.8125rem;
+		height: 105px;
+		width: 105px
 	}
 
 	hr {
@@ -26,5 +27,8 @@
 		text-transform: capitalize;
 		font-family: ratiomodern, serif;
 		color: #254e39;
+	}
+	li {
+		list-style: none;
 	}
 }
