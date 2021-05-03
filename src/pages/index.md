@@ -1,8 +1,29 @@
 ---
+contact:
+  title: contact
+  image: ../img/contact.png
+  details:
+    landline: 01473 232434
+    mobile: "07449794054"
+    email: saskia@blackthornbeauty.co.uk
 templateKey: index-page
-title: does this title change
+facialTreatments:
+  title: facial treatments
+  type:
+    - subtitle: electric machines
+      paragraph: Electrical machines are known to help in reducing fine lines and
+        wrinkles as well as improving skins texture and appearance. Gentle
+        electrical currents can help to tighten muscles, increase collagen
+        production and promote new skin cell growth. Opatra optimises
+        technologies such as galvanic, ultrasonic and photon therapy to treat
+        such concerns.
+    - subtitle: tropic products
+      paragraph: Tropic is a multi award winning, vegan and cruelty free brand which
+        specialises in natural products which help to freshen, brighten and
+        improve the skin’s texture and appearance. Tropic is at the forefront of
+        the green beauty movement, using ingredients that promote the overall
+        health of our skin.
 logo: ../img/logo.png
-footer: ../img/footer.png
 about:
   title: about
   aboutImage: ../img/about.png
@@ -15,6 +36,25 @@ about:
       and piercings.
     - Get in touch for further information or to book an appointment!
   aboutPattern: ../img/pattern.png
+location:
+  title: location
+  address:
+    name: balckthorn beauty & piercing
+    secondName: freedom tattoo studio
+    street: 11-13 high street, ipswich,
+    postcode: IP1 3JZ
+    info: please note that the studio is based upstairs and may be unsuitale for
+      those with mobility problems
+opening:
+  title: opening times
+  time: 10am - 5pm
+  days:
+    - tuesday,
+    - wednesday,
+    - thursday,
+    - saturday
+title: does this still work
+footer: ../img/footer.png
 treatments:
   - title: massage
     image: ../img/massage.png
@@ -91,7 +131,8 @@ treatments:
         time: time may vary
   - title: facials
     image: ../img/facials.png
-    subtitle: All facials include a consulation and skin analysis where the most suitable treatment can be discussed
+    subtitle: All facials include a consulation and skin analysis where the most
+      suitable treatment can be discussed
     extra: Machine used will be decided upon consultation and skin analysis
     items:
       - title: express tropic facial
@@ -138,34 +179,4 @@ treatments:
         price: single £30 | pair £50
       - title: jewellery change
         price: "10"
-facialTreatments:
-  title: facial treatments 
-  type:
-    - subtitle: electric machines
-      paragraph: Electrical machines are known to help in reducing fine lines and wrinkles as well as improving skins texture and appearance. Gentle electrical currents can help to tighten muscles, increase collagen production and promote new skin cell growth. Opatra optimises technologies such as galvanic, ultrasonic and photon therapy to treat such concerns.
-    - subtitle: tropic products
-      paragraph: Tropic is a multi award winning, vegan and cruelty free brand which specialises in natural products which help to freshen, brighten and improve the skin’s texture and appearance. Tropic is at the forefront of the green beauty movement, using ingredients that promote the overall health of our skin.
-opening:
-  title: opening times
-  time: "10am - 5pm"    
-  days:
-    - tuesday,
-    - wednesday,
-    - thursday,
-    - saturday
-location:
-  title: location
-  address:
-    name: balckthorn beauty & piercing
-    secondName: freedom tattoo studio
-    street: "11-13 high street, ipswich,"
-    postcode: "IP1 3JZ"
-    info: please note that the studio is based upstairs and may be unsuitale for those with mobility problems  
-contact:
-  title: contact
-  image: ../img/contact.png    
-  details:
-    landline: "01473 232434"
-    mobile: "07449794054"  
-    email: saskia@blackthornbeauty.co.uk
 ---
