@@ -5,23 +5,25 @@ import Col from "react-bootstrap/Col";
 import { graphql, StaticQuery } from "gatsby";
 import styles from "./OpeningTimes.module.scss";
 
-const OpeningTimes = () => (
-    <StaticQuery
-        query={graphql`
-            {
-                opening: markdownRemark(
-                    frontmatter: { templateKey: { eq: "index-page" } }
-                ) {
-                    frontmatter {
-                        opening {
-                            days
-                            title
-                            time
-                        }
-                    }
+const openingTimesQuery = graphql`
+    {
+        opening: markdownRemark(
+            frontmatter: { templateKey: { eq: "index-page" } }
+        ) {
+            frontmatter {
+                opening {
+                    days
+                    title
+                    time
                 }
             }
-        `}
+        }
+    }
+`;
+
+const OpeningTimes = () => (
+    <StaticQuery
+        query={openingTimesQuery}
         render={data => {
             const {
                 opening: {
@@ -49,6 +51,5 @@ const OpeningTimes = () => (
         }}
     />
 );
-
 
 export default OpeningTimes;

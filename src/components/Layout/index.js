@@ -8,25 +8,25 @@ import { graphql, StaticQuery } from "gatsby";
 import styles from "./Layout.module.scss";
 import Img from "gatsby-image";
 
-const TemplateWrapper = ({ children }) => (
-    <StaticQuery
-        query={graphql`
-            {
-                markdownRemark(
-                    frontmatter: { templateKey: { eq: "index-page" } }
-                ) {
-                    frontmatter {
-                        logo {
-                            childImageSharp {
-                                fluid {
-                                    src
-                                }
-                            }
+const templateWrapperQuery = graphql`
+    {
+        markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+            frontmatter {
+                logo {
+                    childImageSharp {
+                        fluid {
+                            src
                         }
                     }
                 }
             }
-        `}
+        }
+    }
+`;
+
+const TemplateWrapper = ({ children }) => (
+    <StaticQuery
+        query={templateWrapperQuery}
         render={data => {
             const {
                 markdownRemark: {

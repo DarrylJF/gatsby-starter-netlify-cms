@@ -5,28 +5,30 @@ import Col from "react-bootstrap/Col";
 import { graphql, StaticQuery } from "gatsby";
 import styles from "./Location.module.scss";
 
-const Location = () => (
-    <StaticQuery
-        query={graphql`
-            {
-                location: markdownRemark(
-                    frontmatter: { templateKey: { eq: "index-page" } }
-                ) {
-                    frontmatter {
-                        location {
-                            title
-                            address {
-                                name
-                                secondName
-                                street
-                                postcode
-                                info
-                            }
-                        }
+const locationQuery = graphql`
+    {
+        location: markdownRemark(
+            frontmatter: { templateKey: { eq: "index-page" } }
+        ) {
+            frontmatter {
+                location {
+                    title
+                    address {
+                        name
+                        secondName
+                        street
+                        postcode
+                        info
                     }
                 }
             }
-        `}
+        }
+    }
+`;
+
+const Location = () => (
+    <StaticQuery
+        query={locationQuery}
         render={data => {
             const {
                 location: {

@@ -8,25 +8,27 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import styles from "./Footer.module.scss";
 
-const Footer = () => (
-    <StaticQuery
-        query={graphql`
-            {
-                footer: markdownRemark(
-                    frontmatter: { templateKey: { eq: "index-page" } }
-                ) {
-                    frontmatter {
-                        footer {
-                            childImageSharp {
-                                fluid {
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
+const footerQuery = graphql`
+    {
+        footer: markdownRemark(
+            frontmatter: { templateKey: { eq: "index-page" } }
+        ) {
+            frontmatter {
+                footer {
+                    childImageSharp {
+                        fluid {
+                            ...GatsbyImageSharpFluid
                         }
                     }
                 }
             }
-        `}
+        }
+    }
+`;
+
+const Footer = () => (
+    <StaticQuery
+        query={footerQuery}
         render={data => {
             const {
                 footer: {
@@ -69,6 +71,5 @@ const Footer = () => (
         }}
     />
 );
-
 
 export default Footer;

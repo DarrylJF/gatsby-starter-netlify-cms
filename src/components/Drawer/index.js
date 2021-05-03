@@ -5,25 +5,25 @@ import CloseIcon from "@material-ui/icons/Close";
 import { graphql, StaticQuery } from "gatsby";
 import Img from "gatsby-image";
 
-const Drawer = ({ close }) => (
-    <StaticQuery
-        query={graphql`
-            {
-                markdownRemark(
-                    frontmatter: { templateKey: { eq: "index-page" } }
-                ) {
-                    frontmatter {
-                        logo {
-                            childImageSharp {
-                                fluid {
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
+const drawerQuery = graphql`
+    {
+        markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+            frontmatter {
+                logo {
+                    childImageSharp {
+                        fluid {
+                            ...GatsbyImageSharpFluid
                         }
                     }
                 }
             }
-        `}
+        }
+    }
+`;
+
+const Drawer = ({ close }) => (
+    <StaticQuery
+        query={drawerQuery}
         render={data => {
             const {
                 markdownRemark: {

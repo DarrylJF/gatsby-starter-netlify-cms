@@ -6,37 +6,35 @@ import { graphql, StaticQuery } from "gatsby";
 import Img from "gatsby-image";
 import styles from "./Contact.module.scss";
 
-const Contact = () => (
-    <StaticQuery
-        query={graphql`
-            {
-                about: markdownRemark(
-                    frontmatter: { templateKey: { eq: "index-page" } }
-                ) {
-                    frontmatter {
-                        contact {
-                            title
-                            details {
-                                landline
-                                mobile
-                                email
-                            }
-                            image {
-                                childImageSharp {
-                                    fluid(
-                                        maxWidth: 800
-                                        maxHeight: 800
-                                        fit: INSIDE
-                                    ) {
-                                        ...GatsbyImageSharpFluid
-                                    }
-                                }
+const contactQuery = graphql`
+    {
+        about: markdownRemark(
+            frontmatter: { templateKey: { eq: "index-page" } }
+        ) {
+            frontmatter {
+                contact {
+                    title
+                    details {
+                        landline
+                        mobile
+                        email
+                    }
+                    image {
+                        childImageSharp {
+                            fluid(maxWidth: 800, maxHeight: 800, fit: INSIDE) {
+                                ...GatsbyImageSharpFluid
                             }
                         }
                     }
                 }
             }
-        `}
+        }
+    }
+`;
+
+const Contact = () => (
+    <StaticQuery
+        query={contactQuery}
         render={data => {
             const {
                 about: {

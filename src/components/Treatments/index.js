@@ -6,35 +6,37 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import styles from "./Treatments.module.scss";
 
-const Treatments = () => (
-    <StaticQuery
-        query={graphql`
-            {
-                treatments: markdownRemark(
-                    frontmatter: { templateKey: { eq: "index-page" } }
-                ) {
-                    frontmatter {
-                        treatments {
-                            image {
-                                childImageSharp {
-                                    fluid {
-                                        ...GatsbyImageSharpFluid
-                                    }
-                                }
+const treatmentsQuery = graphql`
+    {
+        treatments: markdownRemark(
+            frontmatter: { templateKey: { eq: "index-page" } }
+        ) {
+            frontmatter {
+                treatments {
+                    image {
+                        childImageSharp {
+                            fluid {
+                                ...GatsbyImageSharpFluid
                             }
-                            title
-                            items {
-                                title
-                                time
-                                price
-                            }
-                            subtitle
-                            extra
                         }
                     }
+                    title
+                    items {
+                        title
+                        time
+                        price
+                    }
+                    subtitle
+                    extra
                 }
             }
-        `}
+        }
+    }
+`;
+
+const Treatments = () => (
+    <StaticQuery
+        query={treatmentsQuery}
         render={data => {
             const {
                 treatments: {

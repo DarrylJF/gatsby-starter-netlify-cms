@@ -96,14 +96,14 @@ export const pageQuery = graphql`
                     paragraphs
                     aboutImage {
                         childImageSharp {
-                            fluid {
+                            fluid(maxWidth: 800) {
                                 ...GatsbyImageSharpFluid
                             }
                         }
                     }
                     aboutPattern {
                         childImageSharp {
-                            fluid {
+                            fluid(maxWidth: 800) {
                                 ...GatsbyImageSharpFluid
                             }
                         }

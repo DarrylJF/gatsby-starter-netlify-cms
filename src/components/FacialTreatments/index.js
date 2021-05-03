@@ -5,25 +5,27 @@ import Col from "react-bootstrap/Col";
 import { graphql, StaticQuery } from "gatsby";
 import styles from "./FacialTreatments.module.scss";
 
-const FacialTreatments = () => (
-    <StaticQuery
-        query={graphql`
-            {
-                facial: markdownRemark(
-                    frontmatter: { templateKey: { eq: "index-page" } }
-                ) {
-                    frontmatter {
-                        facialTreatments {
-                            title
-                            type {
-                                subtitle
-                                paragraph
-                            }
-                        }
+const facialTreatmentsQuery = graphql`
+    {
+        facial: markdownRemark(
+            frontmatter: { templateKey: { eq: "index-page" } }
+        ) {
+            frontmatter {
+                facialTreatments {
+                    title
+                    type {
+                        subtitle
+                        paragraph
                     }
                 }
             }
-        `}
+        }
+    }
+`;
+
+const FacialTreatments = () => (
+    <StaticQuery
+        query={facialTreatmentsQuery}
         render={data => {
             const {
                 facial: {
@@ -55,6 +57,5 @@ const FacialTreatments = () => (
         }}
     />
 );
-
 
 export default FacialTreatments;
