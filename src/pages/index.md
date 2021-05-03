@@ -8,17 +8,17 @@ contact:
     email: saskia@blackthornbeauty.co.uk
 templateKey: index-page
 facialTreatments:
-  title: facial treatments
-  type:
-    - subtitle: electric machines
-      paragraph: Electrical machines are known to help in reducing fine lines and
+  facialTitle: facial treatments
+  facialTypes:
+    - facialType: electric machines
+      facialDescription: Electrical machines are known to help in reducing fine lines and
         wrinkles as well as improving skins texture and appearance. Gentle
         electrical currents can help to tighten muscles, increase collagen
         production and promote new skin cell growth. Opatra optimises
         technologies such as galvanic, ultrasonic and photon therapy to treat
         such concerns.
-    - subtitle: tropic products
-      paragraph: Tropic is a multi award winning, vegan and cruelty free brand which
+    - facialType: tropic products
+      facialDescription: Tropic is a multi award winning, vegan and cruelty free brand which
         specialises in natural products which help to freshen, brighten and
         improve the skin’s texture and appearance. Tropic is at the forefront of
         the green beauty movement, using ingredients that promote the overall
@@ -43,7 +43,7 @@ location:
     secondName: freedom tattoo studio
     street: 11-13 high street, ipswich,
     postcode: IP1 3JZ
-    info: please note that the studio is based upstairs and may be unsuitale for
+    info: please note that the studio is based upstairs and may be unsuitable for
       those with mobility problems
 opening:
   title: opening times
@@ -55,128 +55,128 @@ opening:
     - saturday
 footer: ../img/footer.png
 treatments:
-  - title: massage
+  - treatment: massage
     image: ../img/massage.png
-    items:
-      - title: scalp
+    types:
+      - type: scalp
         price: "10"
         time: "15"
-      - title: back, neck & shoulders
+      - type: back, neck & shoulders
         price: "20"
         time: "25"
-      - title: swedish full body
+      - type: swedish full body
         price: "20"
         time: "55"
-      - title: hot stones back massage
+      - type: hot stones back massage
         price: "30"
         time: "30"
-      - title: hot stones full body massage
+      - type: hot stones full body massage
         price: "50"
         time: "60"
-  - title: waxing
+  - treatment: waxing
     image: ../img/waxing.png
-    items:
-      - title: eyesbrow shape
+    types:
+      - type: eyesbrow shape
         price: "8"
-      - title: upper lip
+      - type: upper lip
         price: "6"
-      - title: chin
+      - type: chin
         price: "6"
-      - title: lip & chin
+      - type: lip & chin
         price: "10"
-      - title: sides of face
+      - type: sides of face
         price: "10"
-      - title: whole face
+      - type: whole face
         price: "25"
-      - title: underarm
+      - type: underarm
         price: "12"
-      - title: full arm
+      - type: full arm
         price: "20"
-      - title: half leg
+      - type: half leg
         price: "20"
-      - title: full leg
+      - type: full leg
         price: "25"
-  - title: tinting
+  - treatment: tinting
     image: ../img/tinting.png
     extra: patch test required 48 hours before treatment
-    items:
-      - title: eyebrow
+    types:
+      - type: eyebrow
         price: "10"
         time: "10"
-      - title: eyebrow shape & tint
+      - type: eyebrow shape & tint
         price: "18"
         time: "25"
-      - title: eyelash tint
+      - type: eyelash tint
         price: "15"
         time: "20"
-      - title: eyelash & eyebrow tint
+      - type: eyelash & eyebrow tint
         price: "18"
         time: "20"
-      - title: lash & brow shape & tint
+      - type: lash & brow shape & tint
         price: "25"
         time: "25"
-  - title: lash extensions
+  - treatment: lash extensions
     image: ../img/lash-extensions.png
     extra: patch test required 48 hours before treatment
-    items:
-      - title: full set novalash classics
+    types:
+      - type: full set novalash classics
         price: "55"
         time: "2.5"
-      - title: novalash classic infills
+      - type: novalash classic infills
         price: "30"
         time: "1.5"
-      - title: lash removal
+      - type: lash removal
         price: "15"
         time: time may vary
-  - title: facials
+  - treatment: facials
     image: ../img/facials.png
     subtitle: All facials include a consulation and skin analysis where the most
       suitable treatment can be discussed
     extra: Machine used will be decided upon consultation and skin analysis
-    items:
-      - title: express tropic facial
+    types:
+      - type: express tropic facial
         price: "25"
         time: "30"
-      - title: advanced tropic facial
+      - type: advanced tropic facial
         price: "40"
         time: "60"
-      - title: express electrical facial
+      - type: express electrical facial
         price: "40"
         time: "45"
-      - title: advanced electrical facial
+      - type: advanced electrical facial
         price: "60"
         time: "75"
-  - title: piercing
+  - treatment: piercing
     image: ../img/piercing.png
     extra: For any other piercings, please enquire with piercer for prices.
-    items:
-      - title: ear lobe
+    types:
+      - type: ear lobe
         price: single £15 | pair £20
-      - title: helix
+      - type: helix
         price: "20"
-      - title: tragus
+      - type: tragus
         price: "20"
-      - title: rook
+      - type: rook
         price: "20"
-      - title: conch
+      - type: conch
         price: "20"
-      - title: scaffolding
+      - type: scaffolding
         price: "25"
-      - title: nostril
+      - type: nostril
         price: single £20 | pair £30
-      - title: septum
+      - type: septum
         price: "25"
-      - title: lip
+      - type: lip
         price: "25"
-      - title: eyebrow
+      - type: eyebrow
         price: "20"
-      - title: micro-dermal
+      - type: micro-dermal
         price: "30"
-      - title: navel
+      - type: navel
         price: "25"
-      - title: nipple
+      - type: nipple
         price: single £30 | pair £50
-      - title: jewellery change
+      - type: jewellery change
         price: "10"
 mainTitle: testing change on cms
 ---

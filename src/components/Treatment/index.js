@@ -3,7 +3,7 @@ import Col from "react-bootstrap/Col";
 import styles from "./Treatment.module.scss";
 import Img from "gatsby-image";
 
-const Treatment = ({ items, title, subtitle, extra, image }) => {
+const Treatment = ({ types, treatment, subtitle, extra, image }) => {
     return (
         <Col md={4}>
             <div className={styles.treatment}>
@@ -17,20 +17,20 @@ const Treatment = ({ items, title, subtitle, extra, image }) => {
                 />
                 <div className={styles.treatmentInner}>
                     <hr />
-                    <h3>{title}</h3>
+                    <h3>{treatment}</h3>
                     {!!subtitle && (
                         <span className={styles.treatmentSubtitle}>
                             {subtitle}
                         </span>
                     )}
                     <ul>
-                        {items.map(item => (
-                            <li key={item.title}>
+                        {types.map(type => (
+                            <li key={type.type}>
                                 <p>
-                                    {item.title}
-                                    <span> | £{item.price}</span>
+                                    {type.type}
+                                    <span> | £{type.price}</span>
                                 </p>
-                                <span>{item.time} mins</span>
+                                <span>{type.time} mins</span>
                             </li>
                         ))}
                         <li>

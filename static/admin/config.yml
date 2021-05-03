@@ -21,10 +21,10 @@ collections:
         identifier_field: mainTitle
         fields:
           - { label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page" }
-          - { label: Title, name: mainTitle, widget: string }
-          - { label: About, name: about, widget: object, fields: [ { label: Title, name: aboutTitle, widget: string } ] }
-#                    - { label: Color, name: color, widget: string }
-#                    - { label: Image, name: image, widget: image }
+          - { label: Main Title, name: mainTitle, widget: string }
+          - { label: About, name: about, widget: object, fields: [ { label: Main Image, name: aboutImage, widget: image }, { label: Title, name: aboutTitle, widget: string }, { label: Paragraphs, name: paragraphs, widget: text }, { label: Pattern Image, name: aboutPattern, widget: image } ] }
+          - { label: "Treatments", name: "treatments", widget: "list", summary: '{{fields.treatment}}', fields: [ { label: Treatment, name: treatment, widget: string }, { label: Image, name: image, widget: image }, { label: subtitle, name: subtitle, widget: string }, { label: Extra, name: extra, widget: string }, { label: "Types", name: "types", widget: "list", summary: '{{fields.type}}', collapsed: false, fields: [ { label: Type, name: type, widget: string }, { label: Price, name: price, widget: string }, { label: Time, name: time, widget: string } ] } ] }
+          - { label: "Facial Treatments", name: facialTreatments, widget: object, fields: [{label: Title, name: facialTitle, widget: string}, {label: "Facial Types", name: "facialTypes", widget: "list", fields: [{label: Type, name: facialType, widget: string}, {label: Description, name: facialDescription, widget: text}]}] }
 #                    - { label: Heading, name: heading, widget: string }
 #                    - { label: Subheading, name: subheading, widget: string }
 #                    - { label: Mainpitch, name: mainpitch, widget: object, fields: [ { label: Title, name: title, widget: string }, { label: Description, name: description, widget: text } ] }

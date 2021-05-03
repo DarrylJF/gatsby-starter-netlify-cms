@@ -1,5 +1,5 @@
 import React from "react";
-// import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 // import {Link, graphql} from 'gatsby'
 import Jumbotron from "../components/Jumbotron";
 import Layout from "../components/Layout";
@@ -17,6 +17,9 @@ export const IndexPageTemplate = ({
     aboutImage,
     aboutPattern,
     paragraphs,
+    treatments,
+    facialTitle,
+    facialTypes,
     // image,
     // subheading,
     // mainpitch,
@@ -32,9 +35,12 @@ export const IndexPageTemplate = ({
                 aboutImage={aboutImage}
                 aboutPattern={aboutPattern}
             />
-            <Treatments />
+            <Treatments treatments={treatments} />
             {/*<MapArea onMarkerMove={() => console.log('marker has moved')}/>*/}
-            <FacialTreatments />
+            <FacialTreatments
+                facialTitle={facialTitle}
+                facialTypes={facialTypes}
+            />
             <OpeningTimes />
             <Location />
             <Contact />
@@ -42,24 +48,24 @@ export const IndexPageTemplate = ({
     );
 };
 
-// IndexPageTemplate.propTypes = {
-// 	image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-// 	title: PropTypes.string,
-// 	color: PropTypes.string,
-// 	heading: PropTypes.string,
-// 	subheading: PropTypes.string,
-// 	mainpitch: PropTypes.object,
-// 	description: PropTypes.string,
-// 	intro: PropTypes.shape({
-// 		blurbs: PropTypes.array,
-// 	}),
-// }
+IndexPageTemplate.propTypes = {
+    mainTitle: PropTypes.string,
+    aboutTitle: PropTypes.string,
+    aboutImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    aboutPattern: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    paragraphs: PropTypes.array,
+    treatments: PropTypes.array,
+    facialTitle: PropTypes.string,
+    facialTypes: PropTypes.array,
+};
 
 const IndexPage = ({ data }) => {
     const {
         frontmatter: {
             mainTitle,
             about: { aboutTitle, paragraphs, aboutImage, aboutPattern },
+            treatments,
+            facialTreatments: { facialTitle, facialTypes },
         },
     } = data.markdownRemark;
     console.log(data.markdownRemark);
@@ -71,21 +77,24 @@ const IndexPage = ({ data }) => {
                 aboutImage={aboutImage}
                 aboutPattern={aboutPattern}
                 paragraphs={paragraphs}
+                treatments={treatments}
+                facialTitle={facialTitle}
+                facialTypes={facialTypes}
             />
         </Layout>
     );
 };
 
-// IndexPage.propTypes = {
-// 	data: PropTypes.shape({
-// 		markdownRemark: PropTypes.shape({
-// 			frontmatter: PropTypes.object,
-// 		}),
-// 	}),
-// }
+IndexPage.propTypes = {
+    data: PropTypes.shape({
+        markdownRemark: PropTypes.shape({
+            frontmatter: PropTypes.object,
+        }),
+    }),
+};
 
 export default IndexPage;
-
+//...GatsbyImageSharpFluid
 export const pageQuery = graphql`
     {
         markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
@@ -96,17 +105,41 @@ export const pageQuery = graphql`
                     paragraphs
                     aboutImage {
                         childImageSharp {
-                            fluid(maxWidth: 800) {
+                            fluid {
                                 ...GatsbyImageSharpFluid
                             }
                         }
                     }
                     aboutPattern {
                         childImageSharp {
-                            fluid(maxWidth: 800) {
+                            fluid {
                                 ...GatsbyImageSharpFluid
                             }
                         }
+                    }
+                }
+                treatments {
+                    treatment
+                    subtitle
+                    extra
+                    image {
+                        childImageSharp {
+                            fluid {
+                                ...GatsbyImageSharpFluid
+                            }
+                        }
+                    }
+                    types {
+                        type
+                        price
+                        time
+                    }
+                }
+                facialTreatments {
+                    facialTitle
+                    facialTypes {
+                        facialType
+                        facialDescription
                     }
                 }
             }
