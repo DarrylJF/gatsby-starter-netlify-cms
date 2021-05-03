@@ -20,6 +20,11 @@ export const IndexPageTemplate = ({
     treatments,
     facialTitle,
     facialTypes,
+    openingTitle,
+    openingTimes,
+    openingDays,
+    locationTitle,
+    locationAddress,
 }) => {
     return (
         <>
@@ -36,8 +41,12 @@ export const IndexPageTemplate = ({
                 facialTitle={facialTitle}
                 facialTypes={facialTypes}
             />
-            <OpeningTimes />
-            <Location />
+            <OpeningTimes
+                title={openingTitle}
+                times={openingTimes}
+                days={openingDays}
+            />
+            <Location title={locationTitle} address={locationAddress} />
             <Contact />
         </>
     );
@@ -52,6 +61,11 @@ IndexPageTemplate.propTypes = {
     treatments: PropTypes.array,
     facialTitle: PropTypes.string,
     facialTypes: PropTypes.array,
+    openingTitle: PropTypes.string,
+    openingTimes: PropTypes.string,
+    openingDays: PropTypes.array,
+    locationTitle: PropTypes.string,
+    locationAddress: PropTypes.object,
 };
 
 const IndexPage = ({ data }) => {
@@ -61,9 +75,11 @@ const IndexPage = ({ data }) => {
             about: { aboutTitle, paragraphs, aboutImage, aboutPattern },
             treatments,
             facialTreatments: { facialTitle, facialTypes },
+            opening: { openingTitle, openingTimes, openingDays },
+            location: { locationTitle, locationAddress },
         },
     } = data.markdownRemark;
-    console.log(data.markdownRemark);
+
     return (
         <Layout>
             <IndexPageTemplate
@@ -75,6 +91,11 @@ const IndexPage = ({ data }) => {
                 treatments={treatments}
                 facialTitle={facialTitle}
                 facialTypes={facialTypes}
+                openingTitle={openingTitle}
+                openingTimes={openingTimes}
+                openingDays={openingDays}
+                locationTitle={locationTitle}
+                locationAddress={locationAddress}
             />
         </Layout>
     );
@@ -135,6 +156,36 @@ export const pageQuery = graphql`
                     facialTypes {
                         facialType
                         facialDescription
+                    }
+                }
+                opening {
+                    openingTitle
+                    openingDays
+                    openingTimes
+                }
+                location {
+                    locationTitle
+                    locationAddress {
+                        name
+                        secondName
+                        street
+                        postcode
+                        info
+                    }
+                }
+                contact {
+                    title
+                    image {
+                        childImageSharp {
+                            fluid {
+                                ...GatsbyImageSharpFluid
+                            }
+                        }
+                    }
+                    details {
+                        landline
+                        mobile
+                        email
                     }
                 }
             }

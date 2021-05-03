@@ -5,8 +5,6 @@ import Col from "react-bootstrap/Col";
 import styles from "./About.module.scss";
 import Img from "gatsby-image";
 
-// ...GatsbyImageSharpFluid
-
 const About = ({ title, paragraphs, aboutImage, aboutPattern }) => (
     <>
         <Container className={styles.sectionAbout}>

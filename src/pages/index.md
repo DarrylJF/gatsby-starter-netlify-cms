@@ -37,8 +37,8 @@ about:
       and piercings.
     - Get in touch for further information or to book an appointment!
 location:
-  title: location
-  address:
+  locationTitle: location
+  locationAddress:
     name: balckthorn beauty & piercing
     secondName: freedom tattoo studio
     street: 11-13 high street, ipswich,
@@ -46,9 +46,9 @@ location:
     info: please note that the studio is based upstairs and may be unsuitable for
       those with mobility problems
 opening:
-  title: opening times
-  time: 10am - 5pm
-  days:
+  openingTitle: opening times
+  openingTimes: 10am - 5pm
+  openingDays:
     - tuesday,
     - wednesday,
     - thursday,
