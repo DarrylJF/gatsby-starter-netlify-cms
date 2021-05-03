@@ -11,20 +11,27 @@ import OpeningTimes from "../components/OpeningTimes";
 import Location from "../components/Location";
 import Contact from "../components/Contact";
 
-export const IndexPageTemplate = (
-    // {
-    title
+export const IndexPageTemplate = ({
+    mainTitle,
+    aboutTitle,
+    aboutImage,
+    aboutPattern,
+    paragraphs,
     // image,
     // subheading,
     // mainpitch,
     // description,
     // intro,
-    // }
-) => {
+}) => {
     return (
         <>
-            <Jumbotron title={title.title} />
-            <About />
+            <Jumbotron title={mainTitle} />
+            <About
+                title={aboutTitle}
+                paragraphs={paragraphs}
+                aboutImage={aboutImage}
+                aboutPattern={aboutPattern}
+            />
             <Treatments />
             {/*<MapArea onMarkerMove={() => console.log('marker has moved')}/>*/}
             <FacialTreatments />
@@ -49,11 +56,22 @@ export const IndexPageTemplate = (
 // }
 
 const IndexPage = ({ data }) => {
-    const { frontmatter: {title} } = data.markdownRemark;
-
+    const {
+        frontmatter: {
+            mainTitle,
+            about: { aboutTitle, paragraphs, aboutImage, aboutPattern },
+        },
+    } = data.markdownRemark;
+    console.log(data.markdownRemark);
     return (
         <Layout>
-            <IndexPageTemplate title={title} />
+            <IndexPageTemplate
+                mainTitle={mainTitle}
+                aboutTitle={aboutTitle}
+                aboutImage={aboutImage}
+                aboutPattern={aboutPattern}
+                paragraphs={paragraphs}
+            />
         </Layout>
     );
 };
@@ -72,7 +90,25 @@ export const pageQuery = graphql`
     {
         markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
             frontmatter {
-                title
+                mainTitle
+                about {
+                    aboutTitle
+                    paragraphs
+                    aboutImage {
+                        childImageSharp {
+                            fluid {
+                                ...GatsbyImageSharpFluid
+                            }
+                        }
+                    }
+                    aboutPattern {
+                        childImageSharp {
+                            fluid {
+                                ...GatsbyImageSharpFluid
+                            }
+                        }
+                    }
+                }
             }
         }
     }

@@ -8,9 +8,8 @@ backend:
         uploadMedia: '[skip ci] Upload “{{path}}”'
         deleteMedia: '[skip ci] Delete “{{path}}”'
 
-media_folder: static/img
+media_folder: src/img
 public_folder: /img
-publish_mode: editorial_workflow
 
 collections:
     -   name: "pages"
@@ -21,7 +20,8 @@ collections:
                 name: "index"
                 fields:
                     - { label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page" }
-                    - { label: Title, name: title, widget: string }
+                    - { label: Title, name: mainTitle, widget: string }
+                    - {label: About, name: about, widget: object, fields: [ {label: Title, name: title, widget: string}]}
 #                    - { label: Color, name: color, widget: string }
 #                    - { label: Image, name: image, widget: image }
 #                    - { label: Heading, name: heading, widget: string }
