@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-// import {Link, graphql} from 'gatsby'
+import { graphql } from "gatsby";
 import Jumbotron from "../components/Jumbotron";
 import Layout from "../components/Layout";
 import About from "../components/About";
@@ -20,11 +20,6 @@ export const IndexPageTemplate = ({
     treatments,
     facialTitle,
     facialTypes,
-    // image,
-    // subheading,
-    // mainpitch,
-    // description,
-    // intro,
 }) => {
     return (
         <>
