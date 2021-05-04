@@ -12,7 +12,7 @@ const OpeningTimes = ({ title, times, days }) => (
                     <h2>{title}</h2>
                     <hr />
                     {days.map(day => (
-                        <span>{day}</span>
+                        <span key={day}>{day}</span>
                     ))}
                     <p>{times}</p>
                 </Col>

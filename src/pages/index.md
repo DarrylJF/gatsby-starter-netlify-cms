@@ -1,8 +1,8 @@
 ---
 contact:
-  title: contact
-  image: ../img/contact.png
-  details:
+  contactTitle: contact
+  contactImage: ../img/contact.png
+  contactDetails:
     landline: 01473 232434
     mobile: "07449794054"
     email: saskia@blackthornbeauty.co.uk

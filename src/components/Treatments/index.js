@@ -1,6 +1,5 @@
 import React from "react";
 import Treatment from "../Treatment";
-import { graphql, StaticQuery } from "gatsby";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";

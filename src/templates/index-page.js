@@ -25,6 +25,9 @@ export const IndexPageTemplate = ({
     openingDays,
     locationTitle,
     locationAddress,
+    contactTitle,
+    contactImage,
+    contactDetails,
 }) => {
     return (
         <>
@@ -47,7 +50,11 @@ export const IndexPageTemplate = ({
                 days={openingDays}
             />
             <Location title={locationTitle} address={locationAddress} />
-            <Contact />
+            <Contact
+                title={contactTitle}
+                image={contactImage}
+                details={contactDetails}
+            />
         </>
     );
 };
@@ -66,6 +73,9 @@ IndexPageTemplate.propTypes = {
     openingDays: PropTypes.array,
     locationTitle: PropTypes.string,
     locationAddress: PropTypes.object,
+    contactTitle: PropTypes.string,
+    contactImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    contactDetails: PropTypes.object,
 };
 
 const IndexPage = ({ data }) => {
@@ -77,6 +87,7 @@ const IndexPage = ({ data }) => {
             facialTreatments: { facialTitle, facialTypes },
             opening: { openingTitle, openingTimes, openingDays },
             location: { locationTitle, locationAddress },
+            contact: { contactTitle, contactImage, contactDetails },
         },
     } = data.markdownRemark;
 
@@ -96,6 +107,9 @@ const IndexPage = ({ data }) => {
                 openingDays={openingDays}
                 locationTitle={locationTitle}
                 locationAddress={locationAddress}
+                contactTitle={contactTitle}
+                contactImage={contactImage}
+                contactDetails={contactDetails}
             />
         </Layout>
     );
@@ -174,15 +188,15 @@ export const pageQuery = graphql`
                     }
                 }
                 contact {
-                    title
-                    image {
+                    contactTitle
+                    contactImage {
                         childImageSharp {
                             fluid {
                                 ...GatsbyImageSharpFluid
                             }
                         }
                     }
-                    details {
+                    contactDetails {
                         landline
                         mobile
                         email
